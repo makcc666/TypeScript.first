@@ -1,2 +1,8 @@
-const a:string = "123";
-console.log("?",a);
+const skills: string[] = ["Dev", "JS", "NodeJS"];
+
+for (const skill of skills) {
+    console.log(skill);
+}
+skills.filter(
+    (record: string) => record !== "JS",
+)
