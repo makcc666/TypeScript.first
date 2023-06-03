@@ -55,7 +55,7 @@ const enum request__statuses {
 
 const get_flags = async (req: {
     topicId: number,
-    status: request__statuses,
+    status?: request__statuses,
 }): Promise<{
     question: string,
     answer: string,
