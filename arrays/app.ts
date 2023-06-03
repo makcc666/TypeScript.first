@@ -5,4 +5,4 @@ for (const skill of skills) {
 }
 skills.filter(
     (record: string) => record !== "JS",
-)
+ )
