@@ -49,6 +49,15 @@ const get_payment_database_id = (res:Res):number=>{
     throw new Error(res.data.errorMessage);
 }
 
+const send_payment = async (req: IPayment): Promise<number> => {
+    const res = await fetch("/api/payment", {
+        method: "post",
+        body: JSON.stringify(req),
+    });
+    const json_data:Res = await res.json();
+    return get_payment_database_id(json_data);
+}
+
 /*
 const send_payment = async (req: IPayment): Promise<number> => {
     const res = await fetch("/api/payment", {
