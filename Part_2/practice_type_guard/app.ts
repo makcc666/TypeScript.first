@@ -42,8 +42,8 @@ const is_pay_response_fail = (res: IResponseSuccess | IResponseFailed): res is I
 
 type Res = IResponseSuccess | IResponseFailed;
 
-const get_payment_database_id = (res:Res):number=>{
-    if (is_pay_response_success(res)){
+const get_payment_database_id = (res: Res): number => {
+    if (is_pay_response_success(res)) {
         return res.data.databaseId;
     }
     throw new Error(res.data.errorMessage);
@@ -54,7 +54,7 @@ const send_payment = async (req: IPayment): Promise<number> => {
         method: "post",
         body: JSON.stringify(req),
     });
-    const json_data:Res = await res.json();
+    const json_data: Res = await res.json();
     return get_payment_database_id(json_data);
 }
 
