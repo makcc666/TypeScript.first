@@ -126,11 +126,20 @@ class Cart {
 }
 
 class Product {
+    static ids: number[];
+
     readonly id: number;
 
     constructor(public name: string, public price: number) {
         if (price <= 0) throw new Error("У продукта должна быть стоимость");
-        this.id = Math.random();
+
+        while (true) {
+            let id = Math.random();
+            if (Product.ids.includes(id)) continue;
+            this.id = id;
+            break;
+        }
+
     }
 }
 
