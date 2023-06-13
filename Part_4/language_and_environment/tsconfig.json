@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "es5", // В какую версию EcmaScript будет компилироваться
+    "lib": [ // Переопределение библиотек, используемых в проекте. Например, в NodeJS не нужна библиотека DOM, поэтому желательно переопределить
+      "DOM", // Подключаем DOM
+      "ES6",
+      "ES2020.BigInt", // Добавляем polyfill
+    ],
+
+    "jsx": "preserve", // Подключение поддержки React и JSX
+    // jsxFactory и подобные, относятся к React и JSX
+
+    "noLib": true, // Отключает все библиотеки
+
+    "useDefineForClassFields": true, // Добавляет в JS objectDefine для описаний свойств классов
+  },
+}
