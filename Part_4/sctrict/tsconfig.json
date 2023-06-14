@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es6",
+
+    "strict": true, // Желательно держать включённым. Остальные опции, лучше не трогать. Только при безвыходных положениях, позволительно переопределять опции "strict"
+    "noImplicitAny": true, // Разрешаем неявно задавать тип ANY. Например, подходит при использовании библиотек из native JS в TS.
+
+    "strictNullChecks": false, // Смотри ниже. Bad
+    /**
+     Позволяет использовать неявные смешанные типы. Пример кода:
+
+     // Функция вернёт либо NUMBER, либо UNDEFINED
+     function test(a: number): number {
+        if (a>0)return a;
+     }
+     */
+
+    "strictFunctionTypes": false, // Смотри ниже. Bad
+    /**
+    Похожее поведение, но уже с TYPE. Вообще не стоит использовать
+    */
+
+    "strictPropertyInitialization": true, // Обязывает приравнивать значения, для описанных свойств класса.  "name: String = 'Ursa'"
+    "noImplicitThis": true, // Следит за потерей контекста THIS, во вложенных функциях
+    "useUnknownInCatchVariables": true, // Good. В блоке CATCH, аргумент будет передан с типом "UNKNOWN", вместо "ANY".
+  },
+
+}
