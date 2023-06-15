@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "noUnusedLocals": true, // Переводить сообщение "Переменная не используется в функции", в тип "предупреждение"
+    "noUnusedParameters": true, // Переводить сообщение "Переданный аргумент не используется", в тип "предупреждение"
+    "exactOptionalPropertyTypes": true, // Good. Запрещает назначать опциональным свойствам значение UNDEFINED
+    "noFallthroughCasesInSwitch": true, // Very good. Указывает (умно), что после "CASES" пропущен RETURN/BREAK
+    "allowUnreachableCode": false, // Good. Запрет, на использование "не достижимого кода". Например, который идёт после RETURN
+
+
+    "noUncheckedIndexedAccess": true, // Good. Указывает, что в объекте может не быть значения по указанному ключу
+    "noPropertyAccessFromIndexSignature": true, // Good. То же самое, но для записи "c.drive
+    /**
+    interface IChecks {
+      [check: string]: boolean;
+    }
+    const c:IChecks = {};
+    c["drive"] // boolean | undefined
+    c.drive
+    */
+
+    "noImplicitOverride": true, // Good. Заставляет в обязательном порядке, указывать OVERRIDE, при перезаписи функций от родителя
+  }
+}
