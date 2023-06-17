@@ -43,9 +43,10 @@
     function groupByKey2<T extends Record<key, any>>(listToGroup: Array<T>, keyOfGroup: keyof T): IGroup<T> {
         const res = new Map<keyof T, T[]>();
         for (const item of listToGroup) {
-            const record = res.get(keyOfGroup);
+            let keyValue = item[keyOfGroup];
+            const record = res.get(keyValue);
             if (Array.isArray(record)) record.push(item);
-            else res.set(keyOfGroup, [item]);
+            else res.set(keyValue, [item]);
 
         }
         return Object.fromEntries(res);
