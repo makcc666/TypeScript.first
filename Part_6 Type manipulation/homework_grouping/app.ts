@@ -54,5 +54,6 @@
 
 
     // groupByKey(data, "group");
+    console.log(groupByKey(data, "group"))
     console.log(groupByKey2(data, "group"))
 }
