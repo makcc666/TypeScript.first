@@ -32,6 +32,6 @@ class MyService2 {
 }
 
 const myService1 = new MyService1();
-myService1.setValue(1,"SomeValue");
+myService1.setValue(1, "SomeValue");
 const myService2 = new MyService2();
 myService2.readValue(1);
