@@ -61,7 +61,7 @@ class PublishDocumentItemState extends DocumentItemState {
 	}
 
 	public publish() {
-		console.log(`Документ уже был опубликован`)
+		console.error(`Документ уже был опубликован`)
 	}
 
 	public delete() {
@@ -71,10 +71,14 @@ class PublishDocumentItemState extends DocumentItemState {
 }
 
 const item = new DocumentItem(`Мой пост об отмене похода в крепость`);
-console.log(item.getState());
+console.log("item::created",item.getState());
 item.publishDoc();
-console.log(item.getState());
+item.publishDoc();
+console.log("item::after publish",item.getState());
 item.deleteDoc();
-console.log(item.getState());
+console.log("item::after unPublish",item.getState());
 item.deleteDoc();
+console.log("item::after delete",item.getState());
+
+
 
